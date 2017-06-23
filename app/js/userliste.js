@@ -12,18 +12,23 @@ function setData(userliste) {
   var table = document.getElementById("usertable");
 
 
-  if (table.childNodes[1].hasChildNodes()) {
+  if (document.getElementsByClassName("userRow") != null) {
     console.log("tried");
-    var row = table.childNodes[1].childNodes[0];
-    table.childNodes[1].removeChild(row);
+    //var rows = document.getElementsByClassName("userRow");
+    $('.userRow').remove();
+    /*
+    for (var i = 0; i < rows.length; i++) {
+
+    }
+    */
   }
 
 
   for (var i = 0; i < userliste.length; i++) {
-    //console.log(userliste[i]["name"] + " - " + userliste[i]["skill"]);
 
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = table.insertRow(1);
+    row.className = "userRow";
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
     var cell1 = row.insertCell(0);
