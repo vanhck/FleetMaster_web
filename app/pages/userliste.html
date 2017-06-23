@@ -70,6 +70,9 @@
                   <li>
                       <a href="map.html"><i class="fa fa-map fa-fw"></i> Map</a>
                   </li>
+                  <li>
+                      <a href="article.html"><i class="fa fa-wrench fa-fw"></i> Gegenstände</a>
+                  </li>
               </ul>
           </div>
           <!-- /.sidebar-collapse -->
@@ -91,6 +94,7 @@
                   <table width="100%" class="table table-striped table-bordered table-hover" id="usertable">
                       <thead>
                           <tr>
+                              <th>ID</th>
                               <th>Name</th>
                               <th>Skill</th>
                           </tr>
@@ -100,6 +104,22 @@
                       </tbody>
                   </table>
                 </div>
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Benutzer hinzufügen
+                        </div>
+                        <div class="panel-body">
+                          <label>Name</label>
+                          <input class="form-control" id="userName">
+                          <br>
+                          <label>Skill</label>
+                          <input class="form-control" id="userSkill">
+                          <br>
+                          <button class="btn btn-success" onclick="addUser()" type="button">Gegenstand hinzufügen</button>
+                        </div>
+                    </div>
+                  </div>
 
 
             <!-- /.container-fluid -->
