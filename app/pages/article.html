@@ -113,6 +113,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Aktivitäten
+                        </div>
+                        <div id="activity-body" class="panel-body">
+
+                        </div>
+                    </div>
+                </div>
 
 
             <!-- /.container-fluid -->
@@ -126,10 +136,12 @@
       function updateData() {
 
         getArticleliste();
+        //getActivityliste(19);
         window.setInterval(function(){
           /// call your function here
           console.log("interval");
           getArticleliste();
+          //getActivityliste(19);
         }, 3000);
       }
 
