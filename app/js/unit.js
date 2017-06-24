@@ -47,12 +47,20 @@ function addUnit() {
   var lon = document.getElementById("unitLon").value;
   var lat = document.getElementById("unitLat").value;
   var type = document.getElementById("unitTyp").value;
-  var link = "http://martinshare.com/api/van.php/newvan/" + name + "/" + lon + "/" + lat + "/" + type;
+  var linkVan = "http://martinshare.com/api/van.php/newvan/" + name + "/" + lon + "/" + lat;
+  var linkLager = "http://martinshare.com/api/van.php/newlager/" + name + "/" + lon + "/" + lat;
 
   if (name != "" && lon != "" && lat != "" && type != "") {
-    $.get(link, function( data ) {
+    if (type == "Van") {
+      $.get(linkVan, function( data ) {
 
-    });
+      });
+    } else if (type == "Lager") {
+      $.get(linkLager, function( data ) {
+
+      });
+    }
+
     document.getElementById("unitName").value = "";
     document.getElementById("unitLon").value = "";
     document.getElementById("unitLat").value = "";
