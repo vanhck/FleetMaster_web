@@ -30,23 +30,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100% !important;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-    </style>
-
 </head>
 
-<body onload="">
+<body onload="updateData()">
 
     <div id="wrapper">
 
@@ -102,12 +88,52 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Map</h1>
+                        <h1 class="page-header">Standort/Van</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-                <iframe src="../test/test-map.html" width="100%" height="800px;"></iframe>
+                <div class="col-md-6">
+                  <table width="100%" class="table table-striped table-bordered table-hover" id="unittable">
+                      <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Longtitute</th>
+                              <th>Latitute</th>
+                              <th>Typ</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <!-- Generate user table row -->
+                      </tbody>
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Einheit hinzufügen
+                        </div>
+                        <div class="panel-body">
+                          <label>Name</label>
+                          <input class="form-control" id="unitName">
+                          <br>
+                          <label>Long</label>
+                          <input class="form-control" id="unitLon">
+                          <br>
+                          <label>Lat</label>
+                          <input class="form-control" id="unitLat">
+                          <br>
+                          <label>Typ</label>
+                          <select class="form-control" id="unitTyp">
+                            <option>Van</option>
+                            <option>Lager</option>
+                          </select>
+                          <br>
+                          <button class="btn btn-success" onclick="addUnit()" type="button">Einheit hinzufügen</button>
+                        </div>
+                    </div>
+                  </div>
 
 
             <!-- /.container-fluid -->
@@ -117,7 +143,16 @@
     </div>
     <!-- /#wrapper -->
 
-
+    <script>
+      function updateData() {
+        getUnitliste();
+        window.setInterval(function(){
+          /// call your function here
+          console.log("interval");
+          getUnitliste();
+        }, 3000);
+      }
+    </script>
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -132,8 +167,7 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <!-- UserList Update -->
-    <script src="../js/userliste.js"></script>
-
+    <script src="../js/unit.js"></script>
 
 
 </body>
