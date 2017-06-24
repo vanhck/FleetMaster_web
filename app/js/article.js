@@ -22,7 +22,14 @@ function setData(warenliste) {
 
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = table.insertRow(1);
-    row.className = "articleRow";
+    if (warenliste[i]["available"] == "true") {
+      row.className = "articleRow success";
+    } else if (warenliste[i]["available"] == "false") {
+      row.className = "articleRow danger";
+    } else {
+      row.className = "articleRow";
+    }
+
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
     var cell1 = row.insertCell(0);
